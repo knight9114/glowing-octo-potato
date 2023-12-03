@@ -40,10 +40,7 @@ def part_2(inputs: str) -> int:
 
     total = 0
     for line in inputs.rstrip("\n").split("\n"):
-        digits = [
-            m if m.isnumeric() else mapping[m]
-            for m in re.findall(pat, line)
-        ]
+        digits = [m if m.isnumeric() else mapping[m] for m in re.findall(pat, line)]
         total += int(digits[0] + digits[-1])
 
     return total
