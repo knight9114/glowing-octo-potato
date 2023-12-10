@@ -2,9 +2,11 @@
 #include "registry.h"
 #include "solution.h"
 #include "d01.h"
+#include "d02.h"
 
 Registry::Registry() {
     solutions[1] = new Solver01();
+    solutions[2] = new Solver02();
 }
 
 Registry::~Registry() {
