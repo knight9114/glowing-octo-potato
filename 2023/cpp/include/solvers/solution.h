@@ -9,7 +9,7 @@ class Solution {
 
     public:
         Solution(int day);
-        ~Solution();
+        virtual ~Solution();
         virtual std::string part_1(std::string inputs);
         virtual std::string part_2(std::string inputs);
 };
