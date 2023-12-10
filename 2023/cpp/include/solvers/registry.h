@@ -5,13 +5,13 @@
 #include "solution.h"
 
 class Registry {
-    protected:
-        std::map<int, Solution*> solutions;
+protected:
+  std::map<int, Solution *> solutions;
 
-    public:
-        Registry();
-        ~Registry();
-        Solution* get_solver(int day);
+public:
+  Registry();
+  ~Registry();
+  Solution *get_solver(int day);
 };
 
 #endif

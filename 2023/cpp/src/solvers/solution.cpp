@@ -1,6 +1,6 @@
-#include "solution.h"
 #include <iostream>
 #include <string>
+#include "solution.h"
 
 Solution::Solution(int day) : day(day) {}
 
