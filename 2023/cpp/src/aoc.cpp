@@ -30,15 +30,20 @@ int main(int argc, char* argv[]) {
     }
 
     std::ifstream fp(filename);
-    std::stringstream inputs {};
-    inputs << fp.rdbuf();
+    if (!fp) {
+        std::cerr << "ERROR: failed to read file, " << filename << std::endl;
+        return 3;
+    }
+    std::stringstream buffer;
+    buffer << fp.rdbuf();
+    std::string inputs = buffer.str();
 
     std::cout << "Day #" << day << std::endl;
     if (part == 0 || part == 1) {
-        std::cout << "Part #1: " << solver->part_1(inputs.str()) << std::endl;
+        std::cout << "Part #1: " << solver->part_1(inputs) << std::endl;
     }
     if (part == 0 || part == 2) {
-        std::cout << "Part #2: " << solver->part_2(inputs.str()) << std::endl;
+        std::cout << "Part #2: " << solver->part_2(inputs) << std::endl;
     }
 
     return 0;
